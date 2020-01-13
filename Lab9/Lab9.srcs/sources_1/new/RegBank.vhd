@@ -6,7 +6,14 @@ entity RegBank is
     Port ( RegSel : in STD_LOGIC_VECTOR (2 downto 0);
            Clk : in STD_LOGIC;
            D : in STD_LOGIC_VECTOR (3 downto 0);
-           Q : out STD_LOGIC_VECTOR (31 downto 0));
+           Q0 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q1 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q2 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q3 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q4 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q5 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q6 : out STD_LOGIC_VECTOR (3 downto 0);
+           Q7 : out STD_LOGIC_VECTOR (3 downto 0));
 end RegBank;
 
 architecture Behavioral of RegBank is
@@ -41,7 +48,7 @@ R0 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(3 downto 0));
+        Q => Q0);
 
 R1 : Reg
     Port map (
@@ -49,14 +56,14 @@ R1 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(7 downto 4));
+        Q => Q1);
 R2 : Reg
     Port map (
         EN => RegEN(0),
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(11 downto 8));
+        Q => Q2);
 
 R3 : Reg
     Port map (
@@ -64,7 +71,7 @@ R3 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(15 downto 12));
+        Q => Q3);
 
 R4 : Reg
     Port map (
@@ -72,7 +79,7 @@ R4 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(19 downto 16));
+        Q => Q4);
 
 R5 : Reg
     Port map (
@@ -80,14 +87,14 @@ R5 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(23 downto 20));
+        Q => Q5);
 R6 : Reg
     Port map (
         EN => RegEN(0),
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(27 downto 24));
+        Q => Q6);
 
 R7 : Reg
     Port map (
@@ -95,6 +102,6 @@ R7 : Reg
         Res => '0',
         Clk => Clk,
         D => D,
-        Q => Q(31 downto 28));
+        Q => Q7);
         
 end Behavioral;
